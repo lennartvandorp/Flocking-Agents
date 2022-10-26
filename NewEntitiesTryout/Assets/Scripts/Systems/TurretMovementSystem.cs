@@ -49,5 +49,3 @@ partial class TurretMovementSystem : SystemBase
             }).ScheduleParallel();
     }
 }
-
-
