@@ -5,17 +5,23 @@ using Unity.Transforms;
 using Unity;
 using Unity.VisualScripting;
 using Unity.Burst;
+using Unity.Mathematics;
+using Unity.Physics;
+
 
 partial struct ZombieJob : IJobEntity
 {
     public EntityCommandBuffer.ParallelWriter ECB;
     public float DeltaTime;
 
-    void Execute([ChunkIndexInQuery] int chunkIndex, ref ZombieAspect zombie)
+    void Execute([ChunkIndexInQuery] int chunkIndex, ref ZombieAspect zombie, ref PhysicsVelocity vel)
     {
         Vector3 dir = Vector3.zero;
         dir +=  GetAvgSurroundingVel(ref zombie);
 
+        zombie.Velocity = new float3(0f, 1f, 0f);
+
+        zombie.Position += zombie.Velocity * DeltaTime;
     }
 
     Vector3 GetAvgSurroundingVel(ref ZombieAspect zombie)

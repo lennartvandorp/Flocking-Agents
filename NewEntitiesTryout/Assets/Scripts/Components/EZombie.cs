@@ -4,10 +4,11 @@ using Unity.Entities;
 using Unity.Mathematics;
 using UnityEngine;
 
-struct EZombie : IComponentData
+public struct EZombie : IComponentData
 {
     public Vector3 position;
     public Vector3 velocity;
+    public float3 Speed;
 
     public DynamicBuffer<SurroundingsBufferElement> surroundingsData;
     public DynamicBuffer<CloseWallsBufferElement> closeWallsData;

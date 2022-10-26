@@ -12,6 +12,8 @@ readonly partial struct ZombieAspect : IAspect
     readonly TransformAspect Transform;
     readonly RefRW<EZombie> Zombie;
 
+
+
     public Vector3 Position
     {
         get => Transform.Position;
@@ -22,6 +24,12 @@ readonly partial struct ZombieAspect : IAspect
     {
         get => Zombie.ValueRO.velocity;
         set => Zombie.ValueRW.velocity = value;
+    }
+
+    public float3 Speed
+    {
+        get => Zombie.ValueRO.Speed;
+        set => Zombie.ValueRW.Speed = value;
     }
 
     public DynamicBuffer<SurroundingsBufferElement> closeZombies
