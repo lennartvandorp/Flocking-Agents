@@ -843,6 +843,7 @@ GameObject:
   - component: {fileID: 4509891502497123548}
   - component: {fileID: 4509891502497123522}
   - component: {fileID: 4509891502497123521}
+  - component: {fileID: 7474925040335870369}
   m_Layer: 3
   m_Name: MyPlayer
   m_TagString: Untagged
@@ -907,7 +908,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7028517fa0ca4054490b2c872cceb5f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  holdJumpOnLand: 1
 --- !u!114 &4509891502497123548
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -953,6 +953,21 @@ MonoBehaviour:
   extendedJumpForce: 1000
   extendedJumpDuration: 0
   fallExtraGravity: 0
+--- !u!114 &7474925040335870369
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4509891502497123551}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c0d55f76dbedc8468870bb48e5ce31a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scentSurvivalTime: 10
+  scentPlacementDistance: 7
+  scent: {fileID: 6919185077256662948, guid: 2bac994667be494428d86f5f25f79bf6, type: 3}
 --- !u!1 &4509891502658968478
 GameObject:
   m_ObjectHideFlags: 0

@@ -2291,12 +2291,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: acdce81c256ea74499cedabad4e531b9, type: 3}
---- !u!1 &178760581 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4509891502497123551, guid: 20b65bfb04d22ab498823634290fa522,
-    type: 3}
-  m_PrefabInstance: {fileID: 245590679}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &181680135
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4795,11 +4789,7 @@ PrefabInstance:
     - {fileID: 4509891501745670516, guid: 20b65bfb04d22ab498823634290fa522, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 4509891502497123551, guid: 20b65bfb04d22ab498823634290fa522,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2077720367}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 20b65bfb04d22ab498823634290fa522, type: 3}
 --- !u!1001 &247849978
 PrefabInstance:
@@ -18168,7 +18158,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 861063158}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
   m_Name: 
@@ -37445,7 +37435,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1748939507}
   m_LocalRotation: {x: 0, y: -0.8968727, z: 0, w: 0.44228876}
-  m_LocalPosition: {x: -25.65, y: -15.774766, z: 5.18}
+  m_LocalPosition: {x: -20.9, y: -15.774766, z: 11.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -46272,21 +46262,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 245590679}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2077720367
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 178760581}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4c0d55f76dbedc8468870bb48e5ce31a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scentSurvivalTime: 10
-  scentPlacementDistance: 7
-  scent: {fileID: 6919185077256662948, guid: 2bac994667be494428d86f5f25f79bf6, type: 3}
 --- !u!54 &2085165171 stripped
 Rigidbody:
   m_CorrespondingSourceObject: {fileID: 3632386552060789772, guid: acdce81c256ea74499cedabad4e531b9,

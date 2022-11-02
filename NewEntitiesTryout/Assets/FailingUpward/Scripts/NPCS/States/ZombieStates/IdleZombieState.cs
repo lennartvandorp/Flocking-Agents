@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Burst.CompilerServices;
 using UnityEngine;
 
 public class IdleZombieState : ZombieState
@@ -25,7 +26,7 @@ public class IdleZombieState : ZombieState
             + GoUpHill()
             ;
 
-        GoInDirection(moveDir); 
+        GoInDirection(moveDir);
         base.UpdateZombie();
     }
 
@@ -101,9 +102,40 @@ public class IdleZombieState : ZombieState
     {
         if (parent.scent)
         {
-            return parent.scent.forward;
+            if (!ScentObstructedByWall())
+            {
+                if (Vector3.Dot(parent.scent.forward, parent.scent.forward - parent.transform.position) < 0)//If haven't passed the scent point yet. 
+                {
+                    return (parent.scent.forward + (parent.scent.position - parent.transform.position).normalized).normalized;
+                }
+
+                return parent.scent.forward;
+            }
         }
         return Vector3.zero;
+    }
+
+    bool ScentObstructedByWall()
+    {
+        RaycastHit[] hits;
+        Vector3 scentDir = parent.scent.position - parent.transform.position;
+        hits = Physics.RaycastAll(parent.transform.position, scentDir, scentDir.magnitude);
+
+        bool toReturn = false;
+        for (int i = 0; i < hits.Length; i++)
+        {
+            if (hits[i].collider.CompareTag("Obstacle"))
+            {
+                toReturn = true;
+            }
+        }
+
+        if (toReturn)
+        {
+            Debug.DrawRay(parent.transform.position, scentDir, Color.red);
+        }
+        else { Debug.DrawRay(parent.transform.position, scentDir, Color.green); }
+        return toReturn;
     }
 
 
