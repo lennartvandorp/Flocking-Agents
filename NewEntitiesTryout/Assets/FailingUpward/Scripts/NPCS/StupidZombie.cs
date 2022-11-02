@@ -32,6 +32,7 @@ public class StupidZombie : Zombie
         if (other.CompareTag("Zombie")) { closeZombies.Add(other.attachedRigidbody); return; }
         if (other.CompareTag("Obstacle")) { closeObstacles.Add(other); return; }
         if (other.CompareTag("Leader")) { if (!leader) { leader = other.GetComponent<NavMeshAgent>(); } }
+        if (other.CompareTag("Scent")) { scent = other.transform; }
 
     }
 
@@ -39,6 +40,9 @@ public class StupidZombie : Zombie
     {
         if (other.CompareTag("Zombie")) { closeZombies.Remove(other.attachedRigidbody); return; }
         if (other.CompareTag("Obstacle")) { closeObstacles.Remove(other); return; }
-        if (other.CompareTag("Leader")) { if (leader) { leader = null; } }
+        if (other.CompareTag("Leader")) { if (leader == other.GetComponent<NavMeshAgent>()) { leader = null; } }
+        if (other.CompareTag("Scent")) { if (other.transform == scent) { scent = null; } }
     }
+
+
 }

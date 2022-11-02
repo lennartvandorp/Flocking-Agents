@@ -20,6 +20,7 @@ public class IdleZombieState : ZombieState
             + GoAwayFromZombies() * parent.separationStrength
             + GoToZombies() * parent.alignmentStrength
             + FollowLeader() * parent.followLeaderStrength
+            + FollowScent() * parent.scentStrength
             ) * parent.acc
             + GoUpHill()
             ;
@@ -92,6 +93,15 @@ public class IdleZombieState : ZombieState
             toReturn = parent.leader.velocity;
 
             return toReturn;
+        }
+        return Vector3.zero;
+    }
+
+    Vector3 FollowScent()
+    {
+        if (parent.scent)
+        {
+            return parent.scent.forward;
         }
         return Vector3.zero;
     }

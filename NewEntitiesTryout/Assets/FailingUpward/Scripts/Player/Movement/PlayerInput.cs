@@ -7,7 +7,6 @@ using UnityEngine;
 [RequireComponent(typeof(Movement))]
 public class PlayerInput : MonoBehaviour
 {
-    [SerializeField] bool holdJumpOnLand;
 
     Movement movement;
     PlayerSenses senses;
@@ -26,7 +25,7 @@ public class PlayerInput : MonoBehaviour
     bool wasJumping;
     bool wasUsing;
     bool wasGrabbing;
-    public void FixedUpdate()
+    public void Update()
     {
         movement.OnStartOfFrame();
         if (Input.GetKey(GameManager.Instance.setup.forward))
@@ -45,11 +44,7 @@ public class PlayerInput : MonoBehaviour
         {
             movement.BackInput();
         }
-        if (Input.GetKey(GameManager.Instance.setup.jump))
-        {
-            movement.Jump();
-        }
-        if((!wasJumping || holdJumpOnLand) && senses.HitGround() && Input.GetKey(GameManager.Instance.setup.jump))
+        if(!wasJumping && senses.HitGround() && Input.GetKey(GameManager.Instance.setup.jump))
         {
             wasJumping = true;
             jumping.OnJump(GameManager.Instance.setup.jump);

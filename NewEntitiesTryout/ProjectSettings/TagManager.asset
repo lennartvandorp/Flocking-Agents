@@ -8,6 +8,7 @@ TagManager:
   - Zombie
   - Obstacle
   - Leader
+  - Scent
   layers:
   - Default
   - TransparentFX

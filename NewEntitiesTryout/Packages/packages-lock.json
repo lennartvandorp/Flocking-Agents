@@ -265,7 +265,7 @@
       }
     },
     "com.unity.terrain-tools": {
-      "version": "5.0.0-pre.3",
+      "version": "5.0.1",
       "depth": 0,
       "source": "registry",
       "dependencies": {

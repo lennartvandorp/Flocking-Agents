@@ -16,6 +16,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] float obstacleAvoidanceDist;
     [HideInInspector] public float ObstacleAvoidanceDist { get { return obstacleAvoidanceDist; } }
 
+    [SerializeField] float scentStrength;
+    [HideInInspector] public float ScentStrength { get { return scentStrength; } }
+
     [SerializeField] float separationStrength;
     [HideInInspector] public float SeparationStrength { get { return separationStrength; } }
 

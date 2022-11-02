@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using Unity.Entities;
 using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody))]
 public class ZombieAuthoring : MonoBehaviour
 {
     [HideInInspector] public EZombie zombieData;

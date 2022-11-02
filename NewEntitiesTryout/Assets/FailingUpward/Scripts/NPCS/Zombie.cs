@@ -14,6 +14,7 @@ public class Zombie : MonoBehaviour
 
     [HideInInspector] public List<Rigidbody> closeZombies;
     [HideInInspector] public List<Collider> closeObstacles;
+    [HideInInspector] public Transform scent;
 
     [HideInInspector] public float conhesionStrength { get { return GameManager.Instance.CohesionStrength; } }
     [HideInInspector] public float obstacleAvoidanceStrength { get { return GameManager.Instance.ObstacleAvoidanceStrength; } }
@@ -21,6 +22,8 @@ public class Zombie : MonoBehaviour
     [HideInInspector] public float alignmentStrength { get { return GameManager.Instance.AlignmentStrength; } }
     [HideInInspector] public float followLeaderStrength { get { return GameManager.Instance.FollowLeaderStrength; } }
     [HideInInspector] public float obstacleAvoidanceDist { get { return GameManager.Instance.ObstacleAvoidanceDist; } }
+    [HideInInspector] public float scentStrength { get { return GameManager.Instance.ObstacleAvoidanceDist; } }
+
 
 
     [HideInInspector] public PlayerSenses senses;
