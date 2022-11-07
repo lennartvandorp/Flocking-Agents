@@ -13,7 +13,7 @@ public class IdleZombieState : ZombieState
 
     Vector3 moveDir = Vector3.zero;
 
-    public override void UpdateZombie()
+    public override void UpdateZombie(float deltaTime)
     {
         moveDir = (
             GetAverageSurroundingVel() * parent.conhesionStrength
@@ -25,9 +25,13 @@ public class IdleZombieState : ZombieState
             ) * parent.acc
             + GoUpHill()
             ;
+        DrawGizmos();
+        base.UpdateZombie(deltaTime);
+    }
 
+    public override void PhysicsUpdate()
+    {
         GoInDirection(moveDir);
-        base.UpdateZombie();
     }
 
     /// <summary>
@@ -129,12 +133,6 @@ public class IdleZombieState : ZombieState
                 toReturn = true;
             }
         }
-
-        if (toReturn)
-        {
-            Debug.DrawRay(parent.transform.position, scentDir, Color.red);
-        }
-        else { Debug.DrawRay(parent.transform.position, scentDir, Color.green); }
         return toReturn;
     }
 
@@ -163,4 +161,36 @@ public class IdleZombieState : ZombieState
         }
         return avgVel.normalized;
     }
+
+
+    #region Debug
+    public override void DrawGizmos()
+    {
+        ScentRays();
+        CloseZombiesRays();
+    }
+
+    void ScentRays()
+    {
+        if (parent.scent)
+        {
+            Vector3 scentDir = parent.scent.position - parent.transform.position;
+
+            if (ScentObstructedByWall())
+            {
+                Debug.DrawRay(parent.transform.position, scentDir, Color.red);
+            }
+            else { Debug.DrawRay(parent.transform.position, scentDir, Color.green); }
+        }
+    }
+
+    void CloseZombiesRays()
+    {
+        for(int i = 0; i < parent.closeZombies.Count; i++)
+        {
+            Vector3 pos = parent.closeZombies[i].position;
+            Debug.DrawLine(parent.transform.position, pos, Color.white, 0f, true);
+        }
+    }
+    #endregion
 }

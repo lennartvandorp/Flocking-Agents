@@ -5,5 +5,7 @@ using UnityEngine;
 public class ZombieState
 {
     protected Zombie parent;
-    public virtual void UpdateZombie() { }
+    public virtual void UpdateZombie(float timeSinceUpdate) { }
+    public virtual void PhysicsUpdate() { }
+    public virtual void DrawGizmos() { }
 }

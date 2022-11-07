@@ -184,9 +184,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
   moveSpeed: 5
-  acc: 2
+  acc: 5
   closeZombies: []
   closeObstacles: []
+  scent: {fileID: 0}
   senses: {fileID: 0}
   leader: {fileID: 0}
 --- !u!135 &4981878717067737521
@@ -208,7 +209,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 10
+  m_Radius: 8
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &699096331685553735
 MonoBehaviour:

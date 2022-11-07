@@ -10,6 +10,7 @@ public class Zombie : MonoBehaviour
 
     public float moveSpeed = 5f;
     public float acc = 2f;
+    protected float timeSinceUpdate;
 
 
     [HideInInspector] public List<Rigidbody> closeZombies;
@@ -38,6 +39,16 @@ public class Zombie : MonoBehaviour
         rb.velocity = new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), Random.Range(-1f, 1f)) * moveSpeed;
         closeObstacles = new List<Collider>();
         senses = GetComponent<PlayerSenses>();
+    }
+
+    private void Update()
+    {
+        timeSinceUpdate += Time.deltaTime;
+    }
+
+    public virtual void UpdateZombie()
+    {
+        timeSinceUpdate = 0f;
     }
 
 }

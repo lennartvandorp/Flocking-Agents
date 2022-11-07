@@ -22,9 +22,26 @@ public class StupidZombie : Zombie
         base.Start();
     }
 
-    private void Update()
+    public override void UpdateZombie()
     {
-        currentState.UpdateZombie();
+        currentState.UpdateZombie(timeSinceUpdate);
+        base.UpdateZombie();
+    }
+
+
+    public void FixedUpdate()
+    {
+        currentState.PhysicsUpdate();
+    }
+
+
+
+    private void OnDrawGizmos()
+    {
+        if (currentState != null)
+        {
+            //currentState.OnDrawGizmos();
+        }
     }
 
     private void OnTriggerEnter(Collider other)

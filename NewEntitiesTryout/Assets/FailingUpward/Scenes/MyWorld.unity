@@ -3655,6 +3655,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 210024295}
+  - component: {fileID: 210024296}
   m_Layer: 0
   m_Name: StupidZombies
   m_TagString: Untagged
@@ -3881,6 +3882,18 @@ Transform:
   m_Father: {fileID: 1597811692}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &210024296
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 210024294}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f92176491f8f744baa852df843bc449, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &211364636
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20736,7 +20749,7 @@ MonoBehaviour:
   cohesionStrength: 1
   obstacleAvoidanceStrength: 1.7
   obstacleAvoidanceDist: 4
-  scentStrength: 100000
+  scentStrength: 5
   separationStrength: 0.6
   alignmentStrength: 0
   followLeaderStrength: 1

@@ -87,6 +87,5 @@ partial struct ZombieMovementSystem : ISystem
         zombieJob.ScheduleParallel();
 
         var triggerJob = new Trigger();
-        //Dependency = triggerJob.Schedule(m_PhysicsWorld, Dependency);
     }
 }
