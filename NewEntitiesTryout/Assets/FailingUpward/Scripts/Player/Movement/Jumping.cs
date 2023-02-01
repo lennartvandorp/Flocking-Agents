@@ -35,7 +35,7 @@ public class Jumping : MonoBehaviour
         float timeEllapsed = 0f;
         bool hasLetGo = false;
         //UpdateAirMoveSpeed();
-        rb.velocity = rb.velocity + (new Vector3(0f, jumpSpeed, 0f));
+        rb.velocity = (new Vector3(rb.velocity.x, jumpSpeed, rb.velocity.z));
         while (timeEllapsed < extendedJumpDuration && !hasLetGo)
         {
             if (Input.GetKey(jumpKey))

@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class ZombieManager : MonoBehaviour
 {
-    int updatePerFrame = 2;
+    [SerializeField] int updatePerFrame;
     List<Zombie> zombieList = new List<Zombie>();
     // Start is called before the first frame update
     void Start()
